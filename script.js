@@ -1,15 +1,14 @@
 let container = document.querySelector('#container');
-let div;
-function makeRows(rows, columns) {
-    for (i = 0; i < rows * columns; i++) {
-        div = document.createElement('div');
+function makeGrid(squares) {
+    for (i = 0; i < squares * squares; i++) {
+        let div = document.createElement('div');
         div.classList.toggle('grid-class');
         container.appendChild(div);
     }
 
 }
 
-makeRows(16, 16);
+makeGrid(16);
 
 let gridClass = document.querySelectorAll('.grid-class');
 gridClass.forEach((div) => {
