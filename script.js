@@ -17,3 +17,13 @@ gridClass.forEach((div) => {
         div.style.backgroundColor = "cyan";
     });
 })
+
+let reset = document.querySelector('#reset');
+reset.addEventListener('click', resetGrid);
+function resetGrid() {
+    gridClass = document.querySelectorAll('.grid-class');
+    gridClass.forEach(div => div.style.backgroundColor = 'white');
+}
+
+// set container max width to 960px wide
+// set limit for user to input max 100x100 square divs
