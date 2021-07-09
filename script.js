@@ -11,6 +11,8 @@ function makeGrid(squares) {
 }
 makeGrid(16);
 
+
+
 // Reset button that turns backgroundColor to white on click
 let reset = document.querySelector('#reset');
 reset.addEventListener('click', resetGrid);
@@ -25,20 +27,37 @@ remake.addEventListener('click', remakeGrid);
 let userNumber;
 function remakeGrid (userNumber) {
     userNumber = prompt('Give number per sides between 1 - 99');
-    if (userNumber === null || userNumber < 1 || userNumber > 100) {
+    if (userNumber === null || userNumber < 1 || userNumber > 100) { // needs fixing
         userNumber = prompt('Give number per sides between 1 - 99');
     } else if (userNumber > 1 || userNumber < 100) {
         gridClass.forEach((div) => {
             div.remove();
         })
         makeGrid(userNumber);
+        turnCyan();
     }
 }
 
-// Makes each square change color to cyan on mouseover
 let gridClass = document.querySelectorAll('.grid-class');
-gridClass.forEach((div) => {
-    div.addEventListener('mouseover', () => {
-        div.style.backgroundColor = "cyan";
-    });
-})
+
+const blackBtn = document.querySelector('#black');
+blackBtn.addEventListener('click', turnBlack);
+function turnBlack() {
+    let gridClass = document.querySelectorAll('.grid-class');
+    gridClass.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = "black";
+        });
+    })
+};
+
+const cyanBtn = document.querySelector('#cyan');
+cyanBtn.addEventListener('click', turnCyan);
+function turnCyan() {
+    let gridClass = document.querySelectorAll('.grid-class');
+    gridClass.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = "cyan";
+        });
+    })
+};
