@@ -1,9 +1,9 @@
 #container {
     height: 500px;
     width: 500px;
+    border: 1px solid gray;
 }
   
 .grid-class {
-    border: 1px solid gray;
     background-color: white;
 }
