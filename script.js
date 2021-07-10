@@ -65,3 +65,17 @@ turnCyan();
 // RGB color on mouseover
 // Generate random number from 0 -255 x 3 for R, G, B
 //  
+
+const rgbBtn = document.querySelector('#rgb');
+rgbBtn.addEventListener('click', turnRGB);
+function turnRGB() {
+    let colorRed = Math.floor(Math.random() * 256);
+    let colorGreen = Math.floor(Math.random() * 256);
+    let colorBlue = Math.floor(Math.random() * 256);
+    let gridClass = document.querySelectorAll('.grid-class');
+    gridClass.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+        });
+    })
+};
