@@ -1,9 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.box-item {
+    font-size: 1em;
+    margin: 5px 5px;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    outline: none;
+
+}
+
+.box-item:active {
+    transform: translateY(4px);
+}
+
 #container {
     height: 500px;
     width: 500px;
-    border: 1px solid gray;
-}
-  
-.grid-class {
-    background-color: white;
+    border: 3px solid black;
+    margin-top: 10px;
 }
