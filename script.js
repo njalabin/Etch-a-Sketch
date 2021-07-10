@@ -11,8 +11,6 @@ function makeGrid(squares) {
 }
 makeGrid(16);
 
-
-
 // Reset button that turns backgroundColor to white on click
 let reset = document.querySelector('#reset');
 reset.addEventListener('click', resetGrid);
@@ -22,7 +20,7 @@ function resetGrid() {
 }
 
 // Remake grid based on number given by user on prompt
-let remake = document.querySelector('#reset');
+let remake = document.querySelector('#remake');
 remake.addEventListener('click', remakeGrid);
 let userNumber;
 function remakeGrid (userNumber) {
@@ -34,6 +32,7 @@ function remakeGrid (userNumber) {
             div.remove();
         })
         makeGrid(userNumber);
+        resetGrid();
         turnCyan();
     }
 }
@@ -61,3 +60,8 @@ function turnCyan() {
         });
     })
 };
+turnCyan();
+
+// RGB color on mouseover
+// Generate random number from 0 -255 x 3 for R, G, B
+//  
